@@ -1,8 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import {Container,Col,Row,Card,Form,Button} from 'react-bootstrap';
+import {NavLink,BrowserRouter,Route,Routes,Outlet} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './components/Login';
+import Register from './components/Register';
 function App() {
   return (
     <div>
@@ -19,7 +21,16 @@ function App() {
 
               <Col lg={6}>
                  <div className="p-5">
-                    <Login/>
+                      <Routes>
+                <Route path="/" >
+                  <Route path="login" element={<Login/>}/>
+                  <Route path="register" element={<Register/>} />
+                  
+                </Route>
+                
+                <Route index element={<Login/>} />
+
+              </Routes>
                  </div>
               </Col>
             </Row>

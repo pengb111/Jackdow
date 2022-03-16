@@ -1,6 +1,7 @@
 import React from 'react';
 import {Container,Col,Row,Card,Form,Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Link} from 'react-router-dom';
 
 export default class Login extends React.Component{
     constructor(props){
@@ -28,7 +29,7 @@ export default class Login extends React.Component{
                           </Form>      
                           <hr/>
                           <div className="text-center">
-                            <a href="register">Create an Account!</a>
+                            <Link to="/register">Create an Account!</Link>
                           </div>
             </div>
         )

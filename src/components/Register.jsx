@@ -58,7 +58,7 @@ export default class Register extends React.Component{
                           </Form>      
                           <hr/>
                           <div className="text-center">
-                            <Link to="/login">Already have an account? Login!</Link>
+                            <Link to="../login">Already have an account? Login!</Link>
                           </div>
             </div>
         )

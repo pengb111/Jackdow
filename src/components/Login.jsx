@@ -6,6 +6,9 @@ import {Link} from 'react-router-dom';
 export default class Login extends React.Component{
     constructor(props){
         super(props);
+      
+        props.cfun("https://i.niupic.com/images/2022/03/16/9WCK.jpg");
+        
     }
     render(){
         return(
@@ -29,7 +32,7 @@ export default class Login extends React.Component{
                           </Form>      
                           <hr/>
                           <div className="text-center">
-                            <Link to="/register">Create an Account!</Link>
+                            <Link to="../register">Create an Account!</Link>
                           </div>
             </div>
         )

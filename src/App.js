@@ -2,12 +2,14 @@ import logo from './logo.svg';
 import React from 'react';
 import './App.css';
 import {Container,Col,Row,Card,Form,Button} from 'react-bootstrap';
-import {NavLink,BrowserRouter,Route,Routes,Outlet} from 'react-router-dom'
+import {NavLink,BrowserRouter,Route,Routes,Outlet,Navigate} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './components/Login';
 import Register from './components/Register';
 import Main from './components/main';
 import UserAuth from './components/user';
+import Homepage from './components/homepage'
+import Find from './components/find'
 
 class App extends React.Component {
   constructor(props){
@@ -30,12 +32,13 @@ class App extends React.Component {
                     <Route path="register" element={<Register/>} />
                   </Route>
 
-                  <Route path="app"  element={<Main username="pengbo"/>} >
-                      <Route path="profile" element={<h1>Profile</h1>}/>
-                      <Route path="find" element={<h1>Find</h1>}/>
+                  <Route path="app"  element={<Main/>} >
+                      <Route path="home" element={<Homepage/>}/>
+                      <Route path="find" element={<Find/>}/>
                     </Route>
 
-                  <Route index element={<Login/ >} />
+                  <Route path="*" element={<Navigate to="/app/home"></Navigate>}></Route>
+                  
   
       </Routes>
     );
